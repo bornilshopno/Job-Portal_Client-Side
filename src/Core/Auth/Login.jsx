@@ -5,7 +5,7 @@ import AuthContext from "./AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const {setloading, createUser, loginUser}=useContext(AuthContext)
+  const {setloading, loginUser}=useContext(AuthContext)
   const location=useLocation()
   const navigate=useNavigate()
   const handleSignIn=(e)=>{

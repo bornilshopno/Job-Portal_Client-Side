@@ -6,7 +6,7 @@ const Banner = () => {
     return (
         <div className="hero bg-gray-700 min-h-96">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="flex-1">
+                <div className="flex-1 flex-col items-center justify-center">
                     <motion.img
                         src={team1} animate={{ y: [0, 40, 0] }} transition={{ duration: 10, repeat: Infinity }}
                         className="w-60 rounded-t-[40px] rounded-br-[40px] border-l-4 border-b-4 border-blue-500 shadow-2xl" />

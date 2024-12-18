@@ -6,7 +6,7 @@ const MyApplications = () => {
     const { user } = useAuth()
     const [myApplications, setMyApplications] = useState([])
     useEffect(() => { 
-        fetch(`http://localhost:5000/job-application?email=${user.email}`) 
+        fetch(`https://server-side-job-portal.vercel.app/job-application?email=${user.email}`) 
         .then(res=>res.json())
         .then(data=>{
             setMyApplications(data)
@@ -15,7 +15,7 @@ const MyApplications = () => {
         }, [user])
 
         const jobApplicationDeleter=(id)=>{
-            fetch(`http://localhost:5000/job-applications/${id}`, {method:"DELETE"})
+            fetch(`https://server-side-job-portal.vercel.app/job-applications/${id}`, {method:"DELETE"})
             .then(res=>res.json())
             .then(data=>{
               if (data.deletedCount>0){

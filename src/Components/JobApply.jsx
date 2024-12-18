@@ -6,7 +6,8 @@ import Swal from "sweetalert2";
 const JobApply = () => {
     const{user}=useAuth()
     const navigate=useNavigate()
-      const id=useParams();
+      const id=useParams().id;
+      console.log(id)
     const submitJobApplication=e=>{
         e.preventDefault();
         const form=e.target;
@@ -15,7 +16,7 @@ const JobApply = () => {
         const resume=form.resume.value;
         const application= {job_id:id, applicant_email:user.email,linkedin,github,resume}
 
-        fetch("http://localhost:5000/job-applications", {
+        fetch("https://server-side-job-portal.vercel.app/job-applications", {
             method:"POST",
             headers:{
                 "content-type":"application/json"
