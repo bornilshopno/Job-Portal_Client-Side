@@ -3,6 +3,7 @@ import loginAnimation from "../../assets/login.json"
 import { useContext } from "react";
 import AuthContext from "./AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const {setloading, loginUser}=useContext(AuthContext)
@@ -17,7 +18,10 @@ const Login = () => {
 
         loginUser(email,password)
         .then(result=>{
-          console.log(result.user);
+          console.log(result.user.email);
+          const user={email: email };
+          axios.post('http://localhost:5000/jwt',user, {withCredentials:true})
+          .then(res=>{console.log(res.data)})
           setloading(false);
           navigate(location.state || "/")
 

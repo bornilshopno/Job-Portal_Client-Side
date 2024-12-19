@@ -7,7 +7,7 @@ const HotJobCard = ({job}) => {
 
     return (
         <div>
-            <div className="card card-compact bg-base-100  shadow-xl">
+            <div className="card card-compact bg-sky-100  shadow-xl">
  <div className="flex items-center">
  <figure>
     <img

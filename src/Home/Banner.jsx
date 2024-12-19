@@ -5,7 +5,7 @@ import team2 from "../assets/meeting.jpg"
 const Banner = () => {
     return (
         <div className="hero bg-gray-700 min-h-96">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content flex-col lg:flex-row-reverse w-11/12 lg:w-9/12 mx-auto">
                 <div className="flex-1 flex-col items-center justify-center">
                     <motion.img
                         src={team1} animate={{ y: [0, 40, 0] }} transition={{ duration: 10, repeat: Infinity }}

@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer className="footer bg-neutral text-neutral-content p-10">
   <aside>
-     <a className="btn">
+     <a className="btn bg-gray-400">
         <img src={icon} alt="" className="h-10" />
         <h3 className="text-3xl">JOB Portal</h3>
       </a>

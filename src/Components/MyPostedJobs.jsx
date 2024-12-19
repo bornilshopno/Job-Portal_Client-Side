@@ -6,20 +6,20 @@ const MyPostedJobs = () => {
     const[myjobs,setMyjobs]=useState([])
     const{user}=useAuth()
     useEffect(()=>{
-        fetch( `https://server-side-job-portal.vercel.app/jobs?email=${user.email}`)
+        fetch( `http://localhost:5000/jobs?email=${user.email}`)
         .then(res=>res.json())
         .then(data=>{
             setMyjobs(data)
         })
     },[user])
     return (
-        <div>
-            <h2 className="text-3xl text-center bg-blue-400">My Posted Jobs: {myjobs.length}</h2>
+        <div className="min-h-96 bg-gradient-to-b from-gray-300 to-gray-700">
+            <h2 className="text-3xl text-center py-10">My Posted Jobs: {myjobs.length}</h2>
 
             <div className="overflow-x-auto">
-  <table className="table">
+  <table className="table w-11/12 lg:w-10/12 mx-auto">
     {/* head */}
-    <thead>
+    <thead className="bg-blue-800 text-white">
       <tr>
         <th></th>
         <th>Job Title</th>
@@ -30,7 +30,7 @@ const MyPostedJobs = () => {
     </thead>
     <tbody>
     
-  {myjobs?.map((myJob,index)=>     <tr key={index}>
+  {myjobs?.map((myJob,index)=>     <tr key={index} className="bg-gray-200">
         <th>{index+1}</th>
         <td>{myJob.title}</td>
         <td>{myJob.jobType}</td>

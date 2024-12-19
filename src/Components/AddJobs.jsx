@@ -22,7 +22,7 @@ const AddJobs = () => {
         newJob.responsibilities=newJob.responsibilities.split("\n")//splitting string to an array by separator ("\n")
         console.log(newJob)//in exact format required
 
-        fetch('https://server-side-job-portal.vercel.app/jobs', {
+        fetch('http://localhost:5000/jobs', {
             method:"POST",
             headers:{
                 "content-type":"application/json"
